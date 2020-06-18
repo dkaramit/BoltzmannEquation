@@ -1,0 +1,67 @@
+\usepackage{ifthen}
+\usepackage{tikz}
+
+%Define blue color environment:
+\usepackage{color}
+\newenvironment{bl}[1]{{\color{blue} #1}}
+
+\newcommand{\dint}{  \displaystyle \int }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\ie}{{\em i.e.} }
+\newcommand{\eg}{{\em e.g.} }
+\newcommand{\GeV}{{\rm GeV}}
+\newcommand{\TeV}{{\rm TeV}}
+\newcommand{\MeV}{{\rm MeV}}
+\newcommand{\keV}{{\rm keV}}
+\newcommand{\rhs}{RHS }
+\newcommand{\lhs}{LHS }
+
+
+
+
+\newcommand{\tM}[2]{ |\tilde{ \mathcal{M} }_{#1 \to #2}|^2}
+
+\newcommand{\vev}[1]{\langle #1 \rangle}
+\newcommand{\Bvev}[1]{\Bigg\langle #1 \Bigg\rangle}
+\newcommand{\bvev}[1]{\Big\langle #1 \Big\rangle}
+
+
+
+
+\newcommand{\lrb}[1]{\left( #1 \right)}
+\newcommand{\lrsb}[1]{\left[ #1 \right]}
+\newcommand{\lrBigb}[1]{\Big( #1 \Big)}
+\newcommand{\lrBigsb}[1]{\Big[ #1 \Big]}
+\newcommand{\lrBiggb}[1]{\Bigg( #1 \Bigg)}
+\newcommand{\lrBiggsb}[1]{\Bigg[ #1 \Bigg]}
+
+\newcommand{\lrBigcb}[1]{\Big\{ #1 \Big\}}
+\newcommand{\lrBiggcb}[1]{\Bigg\{ #1 \Bigg\}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--Begin_refs--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Define reference to an arbitrary number of equations (\eqs{label_1,label_2....,label_n} will show eqs. ref_1, ref_2, ..., and ref_n)
+\newcommand{\eqs}[1]{\foreach\i[count=\NumArgs] in {#1}{}%
+\ifthenelse{\equal{\NumArgs}{1}}{eq.~(\ref{#1})}%
+{\ifthenelse{\equal{\NumArgs}{2}}%
+{eqs.~\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\NumArgs}}{and (\ref{\i})}{(\ref{\i})~}}}%
+{eqs.~\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\NumArgs}}{and (\ref{\i})}{(\ref{\i}),~}}}}}
+
+
+%Define reference to an arbitrary number of equations (\Eqs{label_1,label_2....,label_n} will show Eqs. ref_1, ref_2, ..., and ref_n)
+\newcommand{\Eqs}[1]{\foreach\i[count=\NumArgs] in {#1}{}%
+\ifthenelse{\equal{\NumArgs}{1}}{eq.~(\ref{#1})}%
+{\ifthenelse{\equal{\NumArgs}{2}}%
+{Eqs.~\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\NumArgs}}{and (\ref{\i})}{(\ref{\i})~}}}%
+{Eqs.~\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\NumArgs}}{and (\ref{\i})}{(\ref{\i}),~}}}}}
+
+
+%Define reference to an arbitrary number of labels (\REF{label_1,label_2....,label_n} will show ref_1, ref_2, ..., and ref_n)
+\newcommand{\refs}[1]{\foreach\i[count=\NumArgs] in {#1}{}%
+\ifthenelse{\equal{\NumArgs}{1}}{(\ref{#1})}%
+{\ifthenelse{\equal{\NumArgs}{2}}%
+{\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\NumArgs}}{and (\ref{\i})}{(\ref{\i})~}}}%
+{\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\NumArgs}}{and (\ref{\i})}{(\ref{\i}),~}}}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--End_refs--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

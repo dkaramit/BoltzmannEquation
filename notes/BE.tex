@@ -1,0 +1,265 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+
+\usepackage{slashed}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float}
+
+\usepackage{subcaption}
+
+
+
+\hypersetup{
+%	bookmarks=true,         % show bookmarks bar?
+	unicode=true,          % non-Latin characters in Acrobat's bookmarks
+	pdftoolbar=true,        % show Acrobat's toolbar?
+	pdfmenubar=true,        % show Acrobat's menu?
+	pdffitwindow=false,     % window fit to page when opened
+	pdfstartview={FitH},    % fits the width of the page to the window
+	pdftitle={},    % title
+	pdfauthor={Author},     % author
+	pdfsubject={Subject},   % subject of the document
+	pdfcreator={},   % creator of the document
+	pdfproducer={Producer}, % producer of the document
+	pdfkeywords={}, % list of keywords
+	pdfnewwindow=true,      % links in new PDF window
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=black,          % color of internal links (change box color with linkbordercolor)
+	citecolor=black,        % color of links to bibliography
+	filecolor=black,      % color of file links
+	urlcolor=black           % color of external links
+}
+
+%There are some definitions of macros in "macros.tex". So, import them!
+\include{macros}%so I have to make it a tex, and load this it order for it to pickup the commands...
+%NOTE: in case you define new macros, put them, and the required packages, in there.
+
+
+\author{}
+
+\title{The Boltzmann Equation and ambiguous factors}
+
+
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+
+%detele this to have section.equation
+%\renewcommand{\theequation}{\arabic{equation}}
+
+\begin{document}
+
+\maketitle
+\begin{abstract} 
+We show the correct way to think of and use Boltzmann equations. 
+\end{abstract}
+\flushbottom
+
+\section{Introduction}\label{sec:intro}
+\setcounter{equation}{0}
+%
+In the literature, the Boltzmann equation (BE) is usually presented for specific simple processes such as $1 \leftrightarrow 2$ or  $2 \leftrightarrow 2$, and then assumed that the generalization is obvious. This is not the case at all, and one needs to specify the rules of the game, so that  BEs describing a system  are correctly implemented.
+
+\subsection{What is a Boltzmann equation}
+General form of a BE for the evolution of the phase-space distribution of a particle $\phi$ is 
+%
+\begin{equation}
+\dfrac{d}{dt} f_{\phi} (\vec{p}) = \sum_{A} \sum_{B} \ I_{A,B}(\vec{p}) \;, 
+\label{eq:GeneralBE}
+\end{equation}
+%
+with the sums running in {\em all} possible processes that involve $\phi$ with initial states $A$ and final states $B$. The collision integral $I_{A,B}$, basically, is the rate at which $\phi$ states are created and destroyed.
+
+\bl{I have my notes to the office where I have a better way of introducing this. I Will make it more precise once the pandemic ends. Basically this is just Fermi's golden rule applied to a collection of a lot of particles.}
+
+\subsubsection*{Definitions}
+In order to make things easier, we introduce the ``enhanced" matrix element squared for a process $A \to B$ 
+%
+\begin{equation}
+ |\tilde{ \mathcal{M} }_{A \to B}|^2 = (2\pi)^4 \ \delta^{(4)}\lrb{\sum_A p_A - \sum_B p_B}  \  \sum_{\rm idofs}|\mathcal{M}_{A \to B}|^2 \; ,
+\label{eq:tildeM}
+\end{equation}
+%
+and the initial and final phase space volume element as 
+%
+\begin{eqnarray}
+&d \Pi_i  \equiv \dfrac{d^3 \vec{q}}{ (2 \pi)^3 } \dfrac{1}{\omega_q} \ f_{i}(\vec{q}) \nonumber \\ 
+&d \Phi_i  \equiv \dfrac{d^3 \vec{q}}{ (2 \pi)^3 } \dfrac{1}{\omega_q} \ \lrb{1 \pm f_{i}(\vec{q})}
+\label{eq:PhaseSpaceVolume}
+\end{eqnarray}
+% 
+
+
+\section{How to figure out the correct factors}\label{sec:Factors}
+\setcounter{equation}{0}
+%
+\subsection*{A simple $2 \to 2$ process}
+Suppose that in the system under study there exist only two particles, $\chi$ and $\psi$, with the only interactions being $\chi \psi \leftrightarrow \chi \chi$. The evolution of the phase-space distribution of $\psi$ is given with no ambiguity on what factors we should use, because there is only one $\psi$ created and destroyed in such processes. Labeling the momenta as  $$\chi(q_\chi) \psi(p) \leftrightarrow \chi(q_1)\chi(q_2) \;,$$ the BE becomes
+%
+\begin{equation}
+\dfrac{d}{dt} f_{\psi }(\vec{p}) = \dfrac{1}{2E_p} \lrsb {
+\dint  \lrb{\dfrac{1}{2} d\Pi_{1} d\Pi_{2}} d\Phi_{\chi}  \tM{\chi \chi }{\chi \psi} \lrb{1\pm f_{\psi }(\vec{p})}
+-\dint d\Pi_{\chi} \lrb{\dfrac{1}{2} d\Phi_{1} d\Phi_{2}}   \tM{\chi \psi}{\chi \chi } f_{\psi }(\vec{p} )
+}\;.
+\label{eq:BE_22-psi}
+\end{equation}
+%
+Notice that there is a factor of $\dfrac{1}{2}$ since we integrate  over the momenta of two identical particles. This is a simple and quite natural BE, with the only factors being the symmetry factors that should be there. 
+
+The problem arises when we try to write down a BE for $f_\chi$. The problem seems to be on the factors should we put. Surely, we don't create one particle but two... or maybe one? How do we count the ``$\chi$ states" we create in each process? A simple solution would be to say that we put the usual symmetry factors, but multiply with the net number of particles created. This can't be true, though. Consider for example a process like $\chi \chi \to \chi \chi$, which re-distributes energy in the system. Are all elastic scattering contributions vanish identically? This would mean that an isolated system of strongly integrating identical particles never reaches thermodynamic equilibrium. I think that Boltzmann would disagree with this. 
+
+So we need to think of what the BE says. The BE keeps track of $\chi$ states. Not one particular particle $\chi$, but all of them participating in all possible interactions. But it keeps track of the states created, one at a time. That is, in one process we only see what one $\chi$ that participates in the process does. If the $\chi$ we keep track  is created, then we add a $\chi$ state the system, otherwise we take away one. So, in the system at hand, both $\chi \psi \to \chi \chi $ and $\chi \chi \to \chi \psi $ can create and destroy $\chi$ states. Before writing the BE, we should choose how to label the momenta. We label the momenta according to
+%
+$$
+\underline{\chi}(p) \psi(q_\psi) \leftrightarrow \chi(q_1)\chi(q_2) \; ,
+$$
+in the process where we keep track of the $\chi$ that appears in the same state as $\psi$, and 
+%
+$$
+\chi(q_\chi) \psi(q_\psi) \leftrightarrow \underline{\chi}(p)\chi(q_1) \; ,
+$$
+%
+in the process where keep track of the $\chi$ appearing in the same state as another $\chi$. Notice that the underline indicates the particle at a definite momentum (we integrate over the others). One may think that we double-count the $\chi$ states produced, but we insist that this is not the case. The reason is that there is no clear way to choose which is the one which correctly keeps track of $\chi$.~\footnote{Notice also that we don't distinguish between the $\chi$s, we just distinguish when they appear in the interaction. This is the reason we don't include both   $\underline{\chi} \chi \to \chi \psi$ and $\chi\underline{\chi}  \to \chi \psi$. }  If we only choose the first one, we get a different equation than if we only choose the second. So these two are physically distinguishable, and they both need to be included. The BE for $f_\chi$, then, reads
+%
+\begin{eqnarray}
+\dfrac{d}{dt} f_{\chi }(\vec{p}) &= \dfrac{1}{2E_p} \lrBiggsb{
+	-\dint d\Pi_{\psi} \lrb{\dfrac{1}{2} d\Phi_{1} d\Phi_{2}}   \tM{\underline{\chi} \psi}{\chi \chi } f_{\chi }(\vec{p} )
+	+ \dint d\Pi_{\chi} d\Pi_{\psi} d\Phi_{1}  \tM{\chi \psi }{\underline{\chi} \chi} \lrb{1\pm f_{\chi }(\vec{p})} 
+	\nonumber \\
+	&- \dint d\Pi_{1} d\Phi_{\chi} d\Phi_{\psi}   \tM{\underline{\chi} \chi}{\chi \psi } f_{\chi }(\vec{p})
+	+ \dint \lrb{\dfrac{1}{2} d\Pi_{1} d\Pi_{2}} d\Phi_{\psi}  \tM{\chi \chi }{\underline{\chi} \psi} \lrb{1\pm f_{\chi }(\vec{p})}
+} \;,
+%
+\label{eq:BE_22-chi}
+\end{eqnarray}  
+%
+where we have denoted the $\chi$ we keep track in each term by an underscore in the matrix element. It should be clear at this point that all four terms contribute in a different way to $f_\chi$'s evolution, and they should be included. However, it would be very useful if one could actually determine if this is somehow correct, or at the very least not false.
+%
+To do this, we note that this system is by definition a closed system, and so its energy should be conserved. Furthermore, the energy conservation should not be  an emergent statistical effect, but it should be enforced by the 4-momentum conservation in each process separately. To check that this this is true, we integrate both~\eqs{eq:BE_22-psi,eq:BE_22-chi} over 
+$\dint \dfrac{d^3 p}{ (2\pi)^3} E_p$, in order to get the evolution of the respective energy densities. Assuming that the system evolves in a constant volume (the non-constant volume would only affect the \rhs of the BE, so this is just a simplification on notation), the above argument takes the form
+%
+$$
+\dfrac{d\rho_\chi}{dt} + \dfrac{d\rho_\psi}{dt} = 0 \;, 
+$$
+%
+with
+%
+\begin{equation}
+\dfrac{d\rho_\psi}{dt} = 
+\dfrac{1}{2} \dint d\Pi_{1}d\Pi_{2} d\Phi_{\chi} d\Phi_{\psi} \tM{\chi\chi}{\chi \psi} \ E_{\psi}  
+-\dfrac{1}{2} \dint  d\Pi_{\chi} d\Pi_{\psi} d\Phi_{1}d\Phi_{2}\tM{\chi \psi}{\chi\chi} \ E_{\psi}  
+\label{eq:rho_phi_22}
+\end{equation}
+%
+and 
+%
+\begin{eqnarray}
+\dfrac{d\rho_\chi}{dt} &= \dfrac{1}{2} \lrBiggsb{
+	-\dint d\Pi_{\psi} d\Pi_{\chi}  d\Phi_{1} d\Phi_{2}   \tM{\underline{\chi} \psi}{\chi \chi } \ E_{\chi}
+	+ 2\dint d\Pi_{\chi} d\Pi_{\psi} d\Phi_{1}d\Phi_{2}  \tM{\chi \psi }{\underline{\chi} \chi} \ E_{q_2} 
+	\nonumber \\
+	&- 2\dint d\Pi_{1}d\Pi_{2} d\Phi_{\chi} d\Phi_{\psi}   \tM{\underline{\chi} \chi}{\chi \psi } \ E_{q_2}
+	+ \dint  d\Pi_{1} d\Pi_{2} d\Phi_{\psi} d\Phi_{\chi}  \tM{\chi \chi }{\underline{\chi} \psi} \ E_{\chi}
+} \;.
+\label{eq:rho_chi_22}
+\end{eqnarray}
+%
+The above equation, then give us 
+%
+\begin{eqnarray}
+\dfrac{d\rho_\chi}{dt} + \dfrac{d\rho_\psi}{dt} &=   \dfrac{1}{2} \lrBiggsb{
+\dint d\Pi_{1}d\Pi_{2} d\Phi_{\chi} d\Phi_{\psi} \tM{\chi\chi}{\chi \psi} \lrb{ -2 E_{q_2} + E_\chi + E_\psi } \\
+&+
+\dint d\Pi_{\chi} d\Pi_{\psi} d\Phi_{1}d\Phi_{2} \tM{\chi \psi }{\chi \chi} \lrb{2 E_{q_2} -E_\chi -E_\psi  } 
+} = 0 \;,
+\end{eqnarray}
+%
+where we note that each process vanishes due to the conservation of 4-momentum. Also notice, that if we didn't include all four terms in~\eqs{eq:BE_22-psi}, this cancellation would be impossible unless someone put some extra factors by hand after integrating the original BE.
+
+
+\subsection*{Working with more complicated processes}
+%
+Although, at this point, it should be clear what is the correct way to treat a more general BE, it would be helpful to see how this is done. To do this, consider the same system as before, but with the only allowed processes $\chi \psi \leftrightarrow \chi \chi \chi$. Following the same reasoning as before, the BE for $f_\psi$ is 
+%
+\begin{eqnarray}
+\dfrac{d}{dt} f_{\psi }(\vec{p}) = \dfrac{1}{2E_p} \lrBiggb {&
+	\dint  \lrb{\dfrac{1}{3!} 
+		d\Pi_{1} d\Pi_{2}d\Pi_{3} } d\Phi_{\chi}  \tM{\chi \chi\chi }{\chi \psi} \lrb{1\pm f_{\psi }(\vec{p})} \nonumber \\
+	-&\dint d\Pi_{\chi} \lrb{\dfrac{1}{3!} d\Phi_{1} d\Phi_{2}d\Phi_{3}}   \tM{\chi \psi}{\chi \chi\chi } f_{\psi }(\vec{p} )
+}\;.
+\label{eq:BE_23-psi}
+\end{eqnarray}
+%
+This is not surprising, as the only thing that changes is that more $\chi$s appear. This results to an extra phase-space volume element and a different symmetry factor to take this element into account. 
+
+The situation is similar  also for the BE for $f_\chi$, which reads
+%
+\begin{eqnarray}\hspace{-0.95cm}
+\dfrac{d}{dt} f_{\chi }(\vec{p}) &= \dfrac{1}{2E_p} \lrBiggsb{
+	-\dint d\Pi_{\psi} \lrb{\dfrac{1}{3!} d\Phi_{1} d\Phi_{2}d\Phi_{3}}   \tM{\underline{\chi} \psi}{\chi\chi \chi } f_{\chi }(\vec{p} )
+	+ \dint d\Pi_{\chi} d\Pi_{\psi} \lrb{\dfrac{1}{2}d\Phi_{1}d\Phi_{2}}  \tM{\chi \psi }{\underline{\chi} \chi\chi} \lrb{1\pm f_{\chi }(\vec{p})} 
+	\nonumber \\
+	&- \dint \lrb{\dfrac{1}{2}d\Pi_{1}d\Pi_{2}}  d\Phi_{\chi} d\Phi_{\psi}   \tM{\underline{\chi} \chi\chi}{\chi \psi } f_{\chi }(\vec{p})
+	+ \dint \lrb{\dfrac{1}{3!} d\Pi_{1} d\Pi_{2}d\Pi_{3}}  d\Phi_{\psi}  \tM{\chi\chi \chi }{\underline{\chi} \psi} \lrb{1\pm f_{\chi }(\vec{p})}
+} \;,
+%
+\label{eq:BE_23-chi}
+\end{eqnarray}  
+%
+where we see again that we only need to include one additional phase-space element. it should be also be obvious that the energy is conserved exactly in the same way as in the previous example. Although this may be a trivial observation, we note that since the energy has to be conserved at each process separately, we should be able to determine if this is true without integrating. 
+%
+That is, for the process $\chi \chi \chi \to \chi \psi$, the energy change in $\psi$ is $E_{\psi}$, and this term comes with a symmetry factor of $\dfrac{1}{3!}$. The energy change in $\chi$ from such processes is given by third and forth terms in~\eqs{eq:BE_23-chi}. The energy change coming from the third term is $-E_{3}$ with a symmetry factor $\dfrac{1}{2}$, while the forth term gives $E_{\chi}$ with a symmetry factor $\dfrac{1}{3!}$. Overall, the net energy change in the entire system by this process is 
+$$
+\dfrac{1}{3!} E_\psi + \dfrac{1}{3!} E_\chi - \dfrac{1}{2} E_3 =  \dfrac{1}{3!} \lrb{E_\psi+E_\chi  - 3 E_3 } = 0 \;.
+$$      
+%
+Similarly, the net energy change for $\chi \psi \to \chi \chi \chi$  is 
+$$
+-\dfrac{1}{3!} E_\psi -\dfrac{1}{3!} E_\chi + \dfrac{1}{2} E_3 = \dfrac{1}{3!} \lrb{3 E_3 - E_\psi - E_\chi  } = 0 \;.
+$$
+
+As a closing remark, we note that this procedure should hold for more complected processes and in complete models. For example, consider a case where the interaction allowed is $ \psi \chi \leftrightarrow \psi  \chi \chi \chi$. In this case, both the BE for $f_\psi$ and the BE for $f_\chi$ should have four terms each one tracking a   particle that is either created or destroyed. Schematically the BE for $f_\psi$ should look-like
+%
+$$\hspace{-0.9cm}
+2E_p \ \dfrac{d}{dt} f_{\psi }(\vec{p}) = 
+\lrBiggcb{\psi \chi \to \underline{\psi}  \lrb{\dfrac{1}{3!}\chi \chi \chi}} 
+-\lrBiggcb{\underline{\psi} \chi \to \psi  \lrb{\dfrac{1}{3!}\chi \chi \chi}} 
++\lrBiggcb{ \psi \lrb{\dfrac{1}{3!}\chi \chi \chi} \to \underline{\psi}  \chi}
+-\lrBiggcb{ \underline{\psi}  \lrb{\dfrac{1}{3!}\chi \chi \chi} \to \psi \chi} \;,
+$$  
+%
+where we include the relevant symmetry factors that we need to include in the collision integral.
+Similarly, the BE for $f_\chi$ of the form
+%
+$$\hspace{-0.9cm}
+2E_p \ \dfrac{d}{dt} f_{\chi }(\vec{p}) = 
+\lrBiggcb{\psi \chi \to \psi  \lrb{\dfrac{1}{2} \chi \chi} \underline{\chi} } 
+-\lrBiggcb{\psi \underline{\chi}  \to \psi  \lrb{\dfrac{1}{3!}\chi \chi \chi}} 
++\lrBiggcb{ \psi  \lrb{\dfrac{1}{3!}\chi \chi \chi}  \to \psi \underline{\chi}}
+-\lrBiggcb{ \psi \lrb{\dfrac{1}{2}\chi \chi}\underline{\chi} \to \psi  \chi}
+ \;,
+$$  
+%
+
+Observing that the first two terms in both BEs correspond to the process $\psi \chi \to \psi \chi \chi \chi $, we can determine the net energy change (including the symmetry factors) in the system (we label $E_{\psi_{1,2}}$ the energies for the  $\underline{\psi}$ that appear in initial and final states respectively) as
+%
+$$
+\dfrac{1}{3!} E_{\psi_2} -  \dfrac{1}{3!} E_{\psi_1} + \dfrac{1}{2} E_3 - \dfrac{1}{3!} E_{\chi} =
+\dfrac{1}{3!} \lrb{ E_{\psi_2} + 3 E_3 -  E_{\psi_1} -  E_{\chi}} =0 \;,
+$$
+%
+while it is trivial to show that the energy is conserved also in the other process.
+
+
+
+%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\bibliography{refs}{}
+%\bibliographystyle{JHEP}                        
+
+\end{document}
