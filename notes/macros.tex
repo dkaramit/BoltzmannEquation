@@ -40,28 +40,41 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--Begin_refs--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\newcounter{eqsNumArgs}
+\newcounter{EqsNumArgs}
+\newcounter{refsNumArgs}
+\newcounter{FigsNumArgs}
 
 %Define reference to an arbitrary number of equations (\eqs{label_1,label_2....,label_n} will show eqs. ref_1, ref_2, ..., and ref_n)
-\newcommand{\eqs}[1]{\foreach\i[count=\NumArgs] in {#1}{}%
-\ifthenelse{\equal{\NumArgs}{1}}{eq.~(\ref{#1})}%
-{\ifthenelse{\equal{\NumArgs}{2}}%
-{eqs.~\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\NumArgs}}{and (\ref{\i})}{(\ref{\i})~}}}%
-{eqs.~\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\NumArgs}}{and (\ref{\i})}{(\ref{\i}),~}}}}}
+\newcommand{\eqs}[1]{\setcounter{eqsNumArgs}{0}\foreach\i in{#1}{\stepcounter{eqsNumArgs}}%
+	\ifthenelse{\equal{\theeqsNumArgs}{1}}{eq.~(\ref{#1})}%
+	{\ifthenelse{\equal{\theeqsNumArgs}{2}}%
+		{eqs.~\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\theeqsNumArgs}}{and (\ref{\i})}{(\ref{\i})~}}}%
+		{eqs.~\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\theeqsNumArgs}}{and (\ref{\i})}{(\ref{\i}),~}}}}}
 
 
 %Define reference to an arbitrary number of equations (\Eqs{label_1,label_2....,label_n} will show Eqs. ref_1, ref_2, ..., and ref_n)
-\newcommand{\Eqs}[1]{\foreach\i[count=\NumArgs] in {#1}{}%
-\ifthenelse{\equal{\NumArgs}{1}}{eq.~(\ref{#1})}%
-{\ifthenelse{\equal{\NumArgs}{2}}%
-{Eqs.~\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\NumArgs}}{and (\ref{\i})}{(\ref{\i})~}}}%
-{Eqs.~\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\NumArgs}}{and (\ref{\i})}{(\ref{\i}),~}}}}}
+\newcommand{\Eqs}[1]{\setcounter{EqsNumArgs}{0}\foreach\i in{#1}{\stepcounter{EqsNumArgs}}%
+	\ifthenelse{\equal{\theEqsNumArgs}{1}}{Eq.~(\ref{#1})}%
+	{\ifthenelse{\equal{\theEqsNumArgs}{2}}%
+		{Eqs.~\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\theEqsNumArgs}}{and (\ref{\i})}{(\ref{\i})~}}}%
+		{Eqs.~\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\theEqsNumArgs}}{and (\ref{\i})}{(\ref{\i}),~}}}}}
 
 
 %Define reference to an arbitrary number of labels (\REF{label_1,label_2....,label_n} will show ref_1, ref_2, ..., and ref_n)
-\newcommand{\refs}[1]{\foreach\i[count=\NumArgs] in {#1}{}%
-\ifthenelse{\equal{\NumArgs}{1}}{(\ref{#1})}%
-{\ifthenelse{\equal{\NumArgs}{2}}%
-{\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\NumArgs}}{and (\ref{\i})}{(\ref{\i})~}}}%
-{\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\NumArgs}}{and (\ref{\i})}{(\ref{\i}),~}}}}}
+\newcommand{\refs}[1]{\setcounter{refsNumArgs}{0}\foreach\i in{#1}{\stepcounter{refsNumArgs}}%
+	\ifthenelse{\equal{\therefsNumArgs}{1}}{(\ref{#1})}%
+	{\ifthenelse{\equal{\therefsNumArgs}{2}}%
+		{\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\therefsNumArgs}}{and (\ref{\i})}{(\ref{\i})~}}}%
+		{\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\therefsNumArgs}}{and (\ref{\i})}{(\ref{\i}),~}}}}}
+
+
+
+%Define reference to an arbitrary number of figs (\Figs{label_1,label_2....,label_n} will show ref_1, ref_2, ..., and ref_n)
+\newcommand{\Figs}[1]{\setcounter{FigsNumArgs}{0}\foreach\i in{#1}{\stepcounter{FigsNumArgs}}%
+	\ifthenelse{\equal{\theFigsNumArgs}{1}}{Fig.~(\ref{#1})}%
+	{\ifthenelse{\equal{\theFigsNumArgs}{2}}%
+		{Figs.~\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\theFigsNumArgs}}{and (\ref{\i})}{(\ref{\i})~}}}%
+		{Figs.~\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\theFigsNumArgs}}{and (\ref{\i})}{(\ref{\i}),~}}}}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--End_refs--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
