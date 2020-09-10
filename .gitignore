@@ -1,5 +1,14 @@
-*.out
 *.aux
 *.log
 *.blg
 *synctex.gz
+
+*.out
+*.pyc
+*__pycache__*
+*.so
+*DS_Store*
+*.vscode
+*path.hpp
+*Hubble.py
+
