@@ -1,3 +1,13 @@
+// This is a strange mix of C and C++. Make it better C++ using vector.
+// You can "convert" a vector to pointer by assigning a pointer to the reference
+//  of the first element of the vector. 
+// Example:
+// vector<double> T;
+// double* Tp = &T[0];
+// Then you can pass Tp by reference and change T.
+// In any case. The gsl things run in C, 
+// so this might be pointless (you still need to specify the number of data you use)...  
+
 #ifndef HEAD_HUBBLE
 #define HEAD_HUBBLE
 #include <cmath>
@@ -21,8 +31,6 @@
 // the data are : T  h  g
 // arXiv: 2005.03544 
 #define N_h_tab 529
-
-
 #define N_den_tab 1000
 
 static void get_data(double *T,double *g,double *h,

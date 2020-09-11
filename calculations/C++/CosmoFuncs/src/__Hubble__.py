@@ -28,12 +28,12 @@ for i,f in enumerate (CppFunc_den):
 ################################################
 
 ####---since ff returns a function pointer, FuncPY is now what ff retured.---###
-hint=func.hsub()
-gint=func.gsub()
-dhint=func.dhsub()
-rhoint=func.rsub()
+heff=func.hsub()
+geff=func.gsub()
+dh=func.dhsub()
+rhoR=func.rsub()
 Hubble=func.Hsub()
-Sint=func.Ssub()
+s=func.Ssub()
 n_bose=func.nbsub()
 n_fermi=func.nfsub()
 rho_bose=func.rbsub()
@@ -42,11 +42,11 @@ n1_bose=func.n1bsub()
 n1_fermi=func.n1fsub()
 
 #####################
-
+# Run some tests:
 if __name__=="__main__":
     from numpy import logspace
     for i in range(-10,10):
-        print( hint(i) , gint(i) , rhoint(i) , Hubble(i) )
+        print( heff(i) , geff(i) , rhoR(i) , Hubble(i) )
     for i in logspace(-2,2,10):
         print( n_bose(i,1) , n_fermi(i,1) , rho_bose(i,1) , rho_fermi(i,1), 
         n1_bose(i,1) , n1_fermi(i,1) )

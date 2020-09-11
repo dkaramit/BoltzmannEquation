@@ -37,8 +37,19 @@ FLG= -$(OPT)  -std=$(STD) -lm  $(GSL_DIR) -lgsl -lgslcblas -DLONG=$(LONG) -I "$(
 
 
 # "make all" will look for libH.so, so it will go to execute "make libH.so"
-all: libH.so 
+all: Boltzmann Hubble.py libH.so 
 	
+
+# the main C++ code goes here
+Boltzmann: paths 
+	$(CC) -o "$(Path)/Boltzmann" "$(Path)/Boltzmann.cpp" $(FLG) 
+
+
+# "make libH.so" will look for paths, so it will execute "make paths"
+# then it will compile Hubble-py.cpp to created libH.so in the current directory.
+libH.so:  paths
+	$(CC)  -fPIC "$(Path)/src/Hubble-py.cpp" -shared -o "$(Path)/libH.so"  $(FLG)
+
 
 
 # "make paths" makes a header file that defines macros with the paths of heff.dat and T_s.dat.
@@ -51,15 +62,11 @@ paths:
 	echo "#define den_PATH \"$(Path)/src/data/densities.dat\" ">> "$(Path)/src/path.hpp"
 
 
+	
+Hubble.py: paths
+	touch "$(Path)/Hubble.py"
 	echo "_PATH_=\"$(Path)\" "> "$(Path)/Hubble.py"
-
 	cat "src/__Hubble__.py" >> "$(Path)/Hubble.py"
-
-
-# "make libH.so" will look for paths, so it will execute "make paths"
-# then it will compile Hubble-py.cpp to created libH.so in the current directory.
-libH.so:  paths
-	$(CC)  -fPIC "$(Path)/src/Hubble-py.cpp" -shared -o "$(Path)/libH.so"  $(FLG)
 
 
 	
@@ -69,6 +76,7 @@ clean:
 	@[ -f "$(Path)/libH.so" ] &&  rm "$(Path)/libH.so" || true
 	@[ -f "$(Path)/src/path.hpp" ] && rm "$(Path)/src/path.hpp" || true
 	@[ -f "$(Path)/Hubble.py" ] && rm  "$(Path)/Hubble.py" || true
+	@[ -f "$(Path)/Boltzmann" ] && rm "$(Path)/Boltzmann" || true
 
 
 # remove ignored files
