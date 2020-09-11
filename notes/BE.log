@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.27)  11 SEP 2020 18:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.27)  11 SEP 2020 19:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -299,18 +299,21 @@ Package: subcaption 2020/01/22 v1.3d Sub-captions (AR)
 \c@subfigure=\count270
 \c@subtable=\count271
 )
-Package hyperref Info: Option `unicode' set `true' on input line 38.
+(/usr/share/texlive/texmf-dist/tex/latex/cancel/cancel.sty
+Package: cancel 2013/04/12 v2.2 Cancel math terms
+)
+Package hyperref Info: Option `unicode' set `true' on input line 39.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `pdftoolbar' set `true' on input line 38.
-Package hyperref Info: Option `pdfmenubar' set `true' on input line 38.
-Package hyperref Info: Option `pdffitwindow' set `false' on input line 38.
-Package hyperref Info: Option `pdfnewwindow' set `true' on input line 38.
-Package hyperref Info: Option `colorlinks' set `true' on input line 38.
+Package hyperref Info: Option `pdftoolbar' set `true' on input line 39.
+Package hyperref Info: Option `pdfmenubar' set `true' on input line 39.
+Package hyperref Info: Option `pdffitwindow' set `false' on input line 39.
+Package hyperref Info: Option `pdfnewwindow' set `true' on input line 39.
+Package hyperref Info: Option `colorlinks' set `true' on input line 39.
 
 \@input{macros.aux}
 \openout2 = `macros.aux'.
@@ -616,24 +619,24 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 (./BE.aux)
 \openout1 = `BE.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -670,7 +673,7 @@ LaTeX Font Info:    ... okay on input line 55.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box61
-Package hyperref Info: Link coloring ON on input line 55.
+Package hyperref Info: Link coloring ON on input line 56.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -682,9 +685,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count295
 )
-LaTeX Info: Redefining \ref on input line 55.
-LaTeX Info: Redefining \pageref on input line 55.
-LaTeX Info: Redefining \nameref on input line 55.
+LaTeX Info: Redefining \ref on input line 56.
+LaTeX Info: Redefining \pageref on input line 56.
+LaTeX Info: Redefining \nameref on input line 56.
 
 (./BE.out) (./BE.out)
 \@outlinefile=\write4
@@ -718,19 +721,19 @@ Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros
-LaTeX Font Info:    Trying to load font information for U+msa on input line 58.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 59.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 58.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 59.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (12.8015pt too wide) detected at line 92
+Overfull \hbox (12.8015pt too wide) detected at line 93
 []
  []
 
@@ -739,28 +742,28 @@ Overfull \hbox (12.8015pt too wide) detected at line 92
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (40.55057pt too wide) detected at line 156
+Overfull \hbox (40.55057pt too wide) detected at line 157
 []
  []
 
 
-Overfull \hbox (52.626pt too wide) detected at line 170
+Overfull \hbox (52.626pt too wide) detected at line 171
 []
  []
 
-[2]
-Overfull \hbox (6.20705pt too wide) detected at line 233
+[2] [3]
+Overfull \hbox (6.20705pt too wide) detected at line 262
 [][]\OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 ([]) = [] []  \OML/cmm/m/it/10.95
  :
  []
 
-[3] [4]
-Overfull \hbox (49.04025pt too wide) in alignment at lines 325--335
+[4]
+Overfull \hbox (49.04025pt too wide) in alignment at lines 354--364
  [][][] []
  []
 
-
-Overfull \hbox (23.10843pt too wide) detected at line 357
+[5]
+Overfull \hbox (23.10843pt too wide) detected at line 386
  \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 E[] []f[]\OT1/cmr/m/n/10.95 ([]) = []\
 OML/cmm/m/it/10.95  ^^_ \OMS/cmsy/m/n/10.95 ! [] [] [] ^^@ [][]\OML/cmm/m/it/10
 .95 ^^_ \OMS/cmsy/m/n/10.95 ! \OML/cmm/m/it/10.95   [] [] \OT1/cmr/m/n/10.95 + 
@@ -769,7 +772,7 @@ MS/cmsy/m/n/10.95 ^^@ [][] [] ! \OML/cmm/m/it/10.95  ^^_[] ;
  []
 
 
-Overfull \hbox (18.28522pt too wide) detected at line 369
+Overfull \hbox (18.28522pt too wide) detected at line 398
  \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 E[] []f[]\OT1/cmr/m/n/10.95 ([]) = []\
 OML/cmm/m/it/10.95  ^^_ \OMS/cmsy/m/n/10.95 ! \OML/cmm/m/it/10.95   [] [][] \OM
 S/cmsy/m/n/10.95 ^^@ []\OML/cmm/m/it/10.95  [] \OMS/cmsy/m/n/10.95 ! \OML/cmm/m
@@ -778,24 +781,24 @@ S/cmsy/m/n/10.95 ^^@ []\OML/cmm/m/it/10.95  [] \OMS/cmsy/m/n/10.95 ! \OML/cmm/m
 5   [] [] \OMS/cmsy/m/n/10.95 ! \OML/cmm/m/it/10.95  ^^_[] ;
  []
 
-[5] [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 388.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 388.
+[6]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 417.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 417.
  (./BE.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 388.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 388.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 417.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 417.
 Package rerunfilecheck Info: File `BE.out' has not changed.
-(rerunfilecheck)             Checksum: E8D0F2E14027AB1D45F99891A69A8462;670.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 388.
+(rerunfilecheck)             Checksum: 6B0CD2EA425A0967B2AD517F0D6059D3;691.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 417.
  ) 
 Here is how much of TeX's memory you used:
- 21612 strings out of 481239
- 381903 string characters out of 5920377
- 615926 words of memory out of 5000000
- 36486 multiletter control sequences out of 15000+600000
+ 21645 strings out of 481239
+ 382374 string characters out of 5920377
+ 615829 words of memory out of 5000000
+ 36513 multiletter control sequences out of 15000+600000
  542894 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,13n,64p,897b,338s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,13n,64p,897b,331s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
@@ -812,10 +815,10 @@ re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on BE.pdf (6 pages, 205004 bytes).
+Output written on BE.pdf (6 pages, 205917 bytes).
 PDF statistics:
- 153 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
+ 156 PDF objects out of 1000 (max. 8388607)
+ 129 compressed objects within 2 object streams
+ 33 named destinations out of 1000 (max. 500000)
  45 words of extra memory for PDF output out of 10000 (max. 10000000)
 

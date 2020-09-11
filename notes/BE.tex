@@ -13,6 +13,7 @@
 \usepackage{float}
 
 \usepackage{subcaption}
+\usepackage{cancel}
 
 
 
@@ -196,31 +197,59 @@ The final state SPD decomposition is the product of the different contributions 
 with $\epsilon = +1$ for bosons, $\epsilon = -1$ for fermions, and $\epsilon = 0$ for classical particles. 
 
 
-
-
-\subsection{Definitions}
+\subsubsection*{Definitions}
 
 Before moving on, let's define some useful things.  In order to make things easier, we introduce the ``enhanced" matrix element squared for a 
 process $A \to B$ 
 %
 \begin{equation}
- |\tilde{ \mathcal{M} }_{A \to B}|^2 = (2\pi)^4 \ \delta^{(4)}\lrb{\sum_A p_A - \sum_B p_B}  \  \sum_{\rm idofs}|\mathcal{M}_{A \to B}|^2 \; ,
-\label{eq:tildeM}
+	w(A \to B) = |\tilde{ \mathcal{M} }_{A \to B}|^2 = (2\pi)^4 \ \delta^{(4)}\lrb{\sum_A p_A - \sum_B p_B}  \  \sum_{\rm idofs}|\mathcal{M}_{A \to B}|^2 \; ,
+	\label{eq:tildeM}
 \end{equation}
 %
 and the initial and final phase space volume element as 
 %
 \begin{eqnarray}
-&d \Pi_i  \equiv \dfrac{d^3 \vec{q}}{ (2 \pi)^3 } \dfrac{1}{2\omega_q} \ f_{i}(\vec{q}) \nonumber \\ 
-&d \Phi_i  \equiv \dfrac{d^3 \vec{q}}{ (2 \pi)^3 } \dfrac{1}{2\omega_q} \ \lrb{1 \pm f_{i}(\vec{q})}
-\label{eq:PhaseSpaceVolume}
+	&d \Pi_i  \equiv \dfrac{d^3 \vec{q}}{ (2 \pi)^3 } \dfrac{1}{2\omega_q} \ f_{i}(\vec{q}) \nonumber \\ 
+	&d \Phi_i  \equiv \dfrac{d^3 \vec{q} }{ (2 \pi)^3 } \dfrac{1}{2\omega_q} \ \lrb{1 \pm f_{i}(\vec{q})}
+	\label{eq:PhaseSpaceVolume}
 \end{eqnarray}
 % 
+
+\subsection{The final form}
+%
+The BE, finally, takes the form
+%
+\begin{align*}
+	\dfrac{d^3 \vec{x} \ d^3 \vec{p}}{(2\pi)^3}	\dfrac{d}{dt}  \ f(\vec{p})=&
+		\lrb{  1+ \epsilon f(t,\vec{p} )} \dfrac{d^3 \vec{x} \ d^3 \vec{p}}{(2\pi)^3} \dfrac{1}{2E_p} 
+	\dint  \prod_{i=1}^{n} d \Pi_i \ \prod_{i=1}^{m} d \Phi_f 
+	\ w_{\vec{p}}(i \to f)    \\
+	%	
+	-&f(t,\vec{p} ) \dfrac{d^3 \vec{x} \ d^3 \vec{p}}{(2\pi)^3} \dfrac{1}{2E_p} 
+	\dint  \prod_{i=1}^{n} d \Phi_i \ \prod_{i=1}^{m} d \Pi_f 
+	\ w_{\vec{p}}(f \to i)  \; ,
+\end{align*}
+%
+or
+%
+\begin{align}
+	2E_p	\dfrac{d}{dt}  \ f(\vec{p})=&	 
+	\lrb{  1+ \epsilon f(t,\vec{p} )} \ \dint  \prod_{i=1}^{n} d \Pi_i \ \prod_{i=1}^{m} d \Phi_f 
+	\ w_{\vec{p}}(i \to f)    \nonumber \\
+	%	
+	-&
+	f(t,\vec{p} ) \ \dint  \prod_{i=1}^{n} d \Phi_i \ \prod_{i=1}^{m} d \Pi_f 
+	\ w_{\vec{p}}(f \to i)  \; .
+	\label{eq:BE_general}
+\end{align}
+
 
 
 \section{How to figure out the correct factors}\label{sec:Factors}
 \setcounter{equation}{0}
 %
+In \eqs{eq:BE_general}, we do not mention whether $i$ or $f$ belong to the species of the f we track down. Here, we try to address that.
 \subsection*{A simple $2 \to 2$ process}
 Suppose that in the system under study there exist only two particles, $\chi$ and $\psi$, with the only interactions being $\chi \psi \leftrightarrow \chi \chi$. The evolution of the phase-space distribution of $\psi$ is given with no ambiguity on what factors we should use, because there is only one $\psi$ created and destroyed in such processes. Labeling the momenta as  $$\chi(q_\chi) \psi(p) \leftrightarrow \chi(q_1)\chi(q_2) \;,$$ the BE becomes
 %
