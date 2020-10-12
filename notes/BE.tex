@@ -16,37 +16,45 @@
 \usepackage{cancel}
 
 
-
 \hypersetup{
-%	bookmarks=true,         % show bookmarks bar?
+	%	bookmarks=true,         % show bookmarks bar?
 	unicode=true,          % non-Latin characters in Acrobat's bookmarks
 	pdftoolbar=true,        % show Acrobat's toolbar?
 	pdfmenubar=true,        % show Acrobat's menu?
 	pdffitwindow=false,     % window fit to page when opened
 	pdfstartview={FitH},    % fits the width of the page to the window
-	pdftitle={},    % title
+	pdftitle={NSCFI},    % title
 	pdfauthor={Author},     % author
 	pdfsubject={Subject},   % subject of the document
 	pdfcreator={},   % creator of the document
 	pdfproducer={Producer}, % producer of the document
-	pdfkeywords={}, % list of keywords
+	pdfkeywords={dark matter} {freeze-in} {non standard cosmology}, % list of keywords
 	pdfnewwindow=true,      % links in new PDF window
 	colorlinks=true,       % false: boxed links; true: colored links
-	linkcolor=black,          % color of internal links (change box color with linkbordercolor)
-	citecolor=black,        % color of links to bibliography
+	linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
+	citecolor=red,        % color of links to bibliography
 	filecolor=black,      % color of file links
-	urlcolor=black           % color of external links
+	urlcolor=blue           % color of external links
 }
 
 %There are some definitions of macros in "macros.tex". So, import them!
 \include{macros}%so I have to make it a tex, and load this it order for it to pickup the commands...
 %NOTE: in case you define new macros, put them, and the required packages, in there.
 
+\usepackage{authblk}
 
-\author{}
+
+\author[ ]{Dimitrios Karamitros}
+
+
+
+\affil[ ]{  }
+\affil[ ]{\textit{E-mail: }
+	\href{mailto:dkaramit@yaho.com}{\bl{dkaramit@yaho.com}},
+	\href{mailto:dimitrios.karamitros@ncbj.gov.pl}{\bl{dimitrios.karamitros@ncbj.gov.pl}},
+}
 
 \title{The Boltzmann Equation and ambiguous factors}
-
 
 \renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
 
@@ -66,7 +74,7 @@ We show the correct way to think of and use Boltzmann equations.
 %
 In the literature, the Boltzmann equation (BE) is usually presented for specific simple processes such as $1 \leftrightarrow 2$ or  $2 \leftrightarrow 2$, and then assumed that the generalization is obvious. This is not the case at all, and one needs to specify the rules of the game, so that  BEs describing a system  are correctly implemented.
 
-\subsection{What is a Boltzmann equation}
+\subsection{What {\em is} a Boltzmann equation}
 General form of a BE for the evolution of the phase-space distribution (PSD) of a particle $\phi$ is 
 %
 \begin{equation}
