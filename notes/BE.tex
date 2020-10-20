@@ -150,7 +150,7 @@ each state would have a maximum occupation number of $1$.
 
 
 
-\subsection*{Creation and distraction rates}
+\subsection*{Creation and destruction rates}
 %
 Let's assume we keep track of a specific system inside a phase-space volume element,$d^3 \vec{x} \ d^3 \vec{p}$, in order to find how the occupation
 number evolves by interaction with another system.  To do this, we need to average over all states, except the one we are looking for. Meaning that the 
@@ -168,14 +168,14 @@ where we do not integrate over $d^3 \vec{p}$, since we keep track inside this mo
 explicitly.  Keep in mine that $f(t,\vec{p}, \vec{p}_i , \vec{k}_i)$ is used in order to average the number on transition taking place according to the 
 occupation number of all states.
 
-In a similar fashion, we find the distraction rate to be the same by changing  $i \leftrightarrow f$, \ie 
+In a similar fashion, we find the destruction rate to be the same by changing  $i \leftrightarrow f$, \ie 
 %
 \begin{align}
-	\text{Distraction rate of states inside $d^3 \vec{x} \ d^3 \vec{p}$ } =  
+	\text{Destruction rate of states inside $d^3 \vec{x} \ d^3 \vec{p}$ } =  
 	\dfrac{d^3 \vec{x} \ d^3 \vec{p}}{(2\pi)^3} \dfrac{1}{2E_p} 
 	\dint  \prod_{i=1}^{n} \dfrac{d^3 \vec{p}_i}{(2\pi)^3 \ 2E_{i}} \ \prod_{i=1}^{m} \dfrac{d^3\vec{k}_f}{(2\pi)^3 \ 2E_{f}}  w_{\vec{p}}(f \to i) 
 	\ \tilde{f}(t,\vec{p}, \vec{p}_i , \vec{k}_f)   \; ,
-	\label{eq:distraction_rate}
+	\label{eq:destruction_rate}
 \end{align}
 %
 where we note that in principle $f$ and $\tilde{f}$ can be different. 
