@@ -10,4 +10,4 @@ The ultimate goal is to build the "ultimate" Boltzmann equation solver!
 
 Let's see how it goes. 
 
-Enjoy (in a few months)
+Enjoy (in a few months).
