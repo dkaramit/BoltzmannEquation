@@ -7,10 +7,10 @@
 *__pycache__*
 *.so
 *.run
-*/Examples/Python/*_examplePlot.pdf
-*/src/Rosenbrock
-*/src/RKF
-*src/Interpolation
+calculations/C++/Examples/Python/*_examplePlot.pdf
+calculations/C++/src/Rosenbrock
+calculations/C++/src/RKF
+calculations/C++/src/Interpolation
 *.cosmoDat
 *.axMDat
 *.anFDat
