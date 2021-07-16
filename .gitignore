@@ -8,8 +8,8 @@
 *.so
 *.run
 Examples/Python/*_examplePlot.pdf
-*src/Rosenbrock
-*src/RKF
+*/src/Rosenbrock
+*/src/RKF
 *src/Interpolation
 .cosmoDat
 .axMDat
