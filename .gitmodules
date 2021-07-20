@@ -1,6 +1,8 @@
 [submodule "calculations/C++/src/NaBBODES"]
 	path = calculations/C++/src/NaBBODES
 	url = git@github.com:dkaramit/NaBBODES.git
+	branch = stable
 [submodule "calculations/C++/src/SimpleSplines"]
 	path = calculations/C++/src/SimpleSplines
 	url = git@github.com:dkaramit/SimpleSplines.git
+	branch = stable
