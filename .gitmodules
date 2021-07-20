@@ -1,0 +1,6 @@
+[submodule "calculations/C++/src/NaBBODES"]
+	path = calculations/C++/src/NaBBODES
+	url = git@github.com:dkaramit/NaBBODES.git
+[submodule "calculations/C++/src/SimpleSplines"]
+	path = calculations/C++/src/SimpleSplines
+	url = git@github.com:dkaramit/SimpleSplines.git
