@@ -10,7 +10,7 @@
 #define printDiff
 
 /*uncomment to print interpolation for different values of theta_max*/
-#define printVal
+// #define printVal
 
 
 #ifndef LONG

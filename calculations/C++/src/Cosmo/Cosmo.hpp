@@ -15,8 +15,8 @@ namespace BE{
         using VecLD=std::vector<LD>;
         
         protected:
-        CubicSpline<LD> h,g;
-        VecLD Ttab,htab,gtab;
+        CubicSpline<LD> log_h,log_g;
+        VecLD log_Ttab,log_htab,log_gtab;
         LD TMin, TMax, hMin, hMax, gMin, gMax;
         LD Mp;
         public:
@@ -51,9 +51,9 @@ namespace BE{
                     //if there is an empty line theta does not change, so do skip it.
                     if(N>1 and T==T_prev){continue;}
 
-                    Ttab.push_back(T);
-                    htab.push_back(heff);
-                    gtab.push_back(geff);
+                    log_Ttab.push_back(std::log(T));
+                    log_htab.push_back(std::log(heff));
+                    log_gtab.push_back(std::log(geff));
 
                     N++;
                 }
@@ -61,43 +61,43 @@ namespace BE{
             }
             data_file.close();
 
-            TMin=Ttab[0];
-            TMax=Ttab[N-1];
-            hMin=htab[0];
-            hMax=htab[N-1];
-            gMin=gtab[0];
-            gMax=gtab[N-1];
+            TMin=std::exp(log_Ttab[0]);
+            TMax=std::exp(log_Ttab[N-1]);
+            hMin=std::exp(log_htab[0]);
+            hMax=std::exp(log_htab[N-1]);
+            gMin=std::exp(log_gtab[0]);
+            gMax=std::exp(log_gtab[N-1]);
 
-            this->h=CubicSpline<LD>(&Ttab,&htab);
-            this->g=CubicSpline<LD>(&Ttab,&gtab);
+            this->log_h=CubicSpline<LD>(&log_Ttab,&log_htab);
+            this->log_g=CubicSpline<LD>(&log_Ttab,&log_gtab);
         }
 
         LD heff(LD T){
             if(T>=TMax){return hMax;}
             if(T<=TMin){return hMin;}
-            return h(T);
+            return std::exp(log_h(std::log(T)));
         }
 
         LD dh(LD T){
             if(T>=TMax){return 1;}
             if(T<=TMin){return 1;}
-            return 1.+1/3.*T/h(T)*h.derivative_1(T);    
+            return 1.+1/3.*log_h.derivative_1( std::log(T) );    
         }
         
         LD geff(LD T){
             if(T>=TMax){return gMax;}
             if(T<=TMin){return gMin;}
-            return g(T);
+            return std::exp(log_g( std::log(T) ));
         }
         LD dgeffdT(LD T){
             if(T>=TMax){return 0;}
             if(T<=TMin){return 0;}
-            return g.derivative_1(T);
+            return geff(T)/T*log_g.derivative_1(std::log(T));
         }
         LD dheffdT(LD T){
             if(T>=TMax){return 0;}
             if(T<=TMin){return 0;}
-            return h.derivative_1(T);
+            return heff(T)/T*log_h.derivative_1(std::log(T));
         }
 
         LD s(LD T){
